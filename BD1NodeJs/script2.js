@@ -13,7 +13,7 @@
 
 // console.log(process.argv);
 
-let args = process.argv;
+// let args = process.argv;
 
 
 // for(let i=2; i<args.length; i++) {
@@ -21,5 +21,5 @@ let args = process.argv;
 
 // }
 
-const someVal = require("./math2");
-console.log(someVal);
+const maths = require("./math2");
+console.log(maths);
