@@ -16,7 +16,10 @@
 let args = process.argv;
 
 
-for(let i=2; i<args.length; i++) {
-    console.log("Hello to", args[i]);
+// for(let i=2; i<args.length; i++) {
+//     console.log("Hello to", args[i]);
 
-}
+// }
+
+const someVal = require("./math2");
+console.log(someVal);
