@@ -1,3 +1,8 @@
-const flowerInfo = require("./Flowers");
+import {sum, PI} from "./math3.js";
 
-console.log(flowerInfo);
+import { generate } from "random-words";
+
+// console.log(sum(1,2));
+// console.log(PI);
+
+console.log(generate());
