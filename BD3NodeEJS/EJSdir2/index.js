@@ -13,6 +13,13 @@ app.get("/", (req, res) => {
     res.render("home.ejs");
 });
 
+app.get("/ig/:username", (req, res) => {
+    const followers = ["oggy", "jack","joe","marky"];
+    let { username } = req.params;
+    // console.log(username);
+    res.render("instagram.ejs", { username, followers });
+});
+
 app.get("/hello", (req, res) => {
     res.send("Hello");
 });
