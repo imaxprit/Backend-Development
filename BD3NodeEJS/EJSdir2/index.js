@@ -14,10 +14,19 @@ app.get("/", (req, res) => {
 });
 
 app.get("/ig/:username", (req, res) => {
-    const followers = ["oggy", "jack","joe","marky"];
-    let { username } = req.params;
+    // const followers = ["oggy", "jack","joe","marky"];
+    // let { username } = req.params;
     // console.log(username);
-    res.render("instagram.ejs", { username, followers });
+
+    let { username } = req.params;
+    const instaData = require("./data.json");
+    // console.log(instaData);
+    const data = instaData[username];
+    console.log(data);
+
+    // res.render("instagram.ejs", { username, followers });
+    // res.render("instagram.ejs", {data : instaData[username]});
+    res.render("instagram.ejs", { data });
 });
 
 app.get("/hello", (req, res) => {
