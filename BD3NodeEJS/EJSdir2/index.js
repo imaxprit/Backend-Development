@@ -5,6 +5,8 @@ const path = require("path");
 
 const port = 8080;
 
+app.use(express.static("public"));
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
@@ -26,7 +28,12 @@ app.get("/ig/:username", (req, res) => {
 
     // res.render("instagram.ejs", { username, followers });
     // res.render("instagram.ejs", {data : instaData[username]});
-    res.render("instagram.ejs", { data });
+    if(data) {
+        res.render("instagram.ejs", { data });
+    } else {
+        res.render("error.ejs");
+    }
+    
 });
 
 app.get("/hello", (req, res) => {
