@@ -1,26 +1,37 @@
-const stu1 = {
-    name : "Rahul",
-    age : 25,
-    marks : 78,
-    getMarks : function() {
-        return this.marks;
-    }
+// const stu1 = {
+//     name : "Rahul",
+//     age : 25,
+//     marks : 78,
+//     getMarks : function() {
+//         return this.marks;
+//     }
+// };
+
+// const stu2 = {
+//     name : "Arpit",
+//     age : 21,
+//     marks : 87,
+//     getMarks : function() {
+//         return this.marks;
+//     }
+// };
+
+// const stu3 = {
+//     name : "Suraj",
+//     age : 23,
+//     marks : 65,
+//     getMarks : function() {
+//         return this.marks;
+//     }
+// }
+
+let arr = [1, 2, 3];
+let arr2 = [8, 7, 4];
+arr.sayhello = () => {
+    console.log("hello i am arr!");
 };
 
-const stu2 = {
-    name : "Arpit",
-    age : 21,
-    marks : 87,
-    getMarks : function() {
-        return this.marks;
-    }
+arr2.sayhello = () => {
+    console.log("hello i am arr2");
 };
 
-const stu3 = {
-    name : "Suraj",
-    age : 23,
-    marks : 65,
-    getMarks : function() {
-        return this.marks;
-    }
-}
