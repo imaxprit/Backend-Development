@@ -35,3 +35,15 @@ arr2.sayhello = () => {
     console.log("hello i am arr2");
 };
 
+function PersonMaker(name, age) {
+    const person = {
+        name : name,
+        age : age,
+        talk() {
+            console.log(`Hi, my name is ${this.name}`);
+        },
+    };
+    return person;
+}
+
+let p1 = PersonMaker("Arpit", 21);
