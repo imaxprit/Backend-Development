@@ -35,15 +35,44 @@ arr2.sayhello = () => {
     console.log("hello i am arr2");
 };
 
-function PersonMaker(name, age) {
-    const person = {
-        name : name,
-        age : age,
-        talk() {
-            console.log(`Hi, my name is ${this.name}`);
-        },
-    };
-    return person;
+// function PersonMaker(name, age) {
+//     const person = {
+//         name : name,
+//         age : age,
+//         talk() {
+//             console.log(`Hi, my name is ${this.name}`);
+//         },
+//     };
+//     return person;
+// }
+
+// let p1 = PersonMaker("Arpit", 21);
+
+// Constructors - doesn't return anything & start with capital letters
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     console.log(this);
+// }
+
+// Person.prototype.talk = function() {
+//     console.log(`Hi, my name is ${this.name}`);
+// };
+
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    talk() {
+        console.log(`Hi, my name is ${this.name}`);
+    }
 }
 
-let p1 = PersonMaker("Arpit", 21);
+let p1 = new Person("adam", 25);
+let p2 = new Person("eve", 25);
+
+
+
