@@ -15,3 +15,25 @@ const emp2 = {
         console.log(`This is ${this.name}`);
     }
 }
+
+let arr = [2, 4, 6, 8];
+let arr2 = [1, 3, 5, 7];
+
+arr.sayGreet = () => {
+    console.log("Good Morning !");
+};
+
+arr2.sayGreet = () => {
+    console.log("Good Afternoon !");
+};
+
+function PersonMaker(name, age) {
+    const person = {
+        name : name,
+        age : age,
+        talk() {
+            console.log(`Hi, my name is ${this.name}`);
+        },
+    };
+    return person;
+}
