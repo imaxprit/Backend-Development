@@ -5,7 +5,7 @@ const path = require("path");
 const {v4 : uuidv4 } = require('uuid');
   //⇨ 'ab16e731-6cee-424d-81a0-5929e9bdb0cc' 
 
-app.use(express.urlencoded({ extended : true }))
+app.use(express.urlencoded({ extended : true }));
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -41,7 +41,8 @@ app.get("/posts/new", (req, res) => {
 app.post("/posts", (req, res) => {
     // console.log(req.body);
     let {username, content} = req.body;
-    posts.push({username, content});
+    let newId = uuidv4();
+    posts.push({newId, username, content});
     // res.send("post request working");
     res.redirect("/posts"); 
 });
@@ -53,6 +54,12 @@ app.get("/posts/:id", (req, res) => {
     // console.log(post);
     res.render("show.ejs", {post});
     // res.send("request working");
+});
+
+app.patch("/posts/:id", (req, res) => {
+    let { newId } = req.params;
+    console.log(id);
+    res.send("patch request working");
 });
 
 app.listen(port, () =>  {
