@@ -52,11 +52,61 @@ const User = mongoose.model("User", userSchema);
 
 // User.findOne({age: {$gte: 48}})
 // User.findOne({_id: '6a13df05950efdd653e00f77'})
-User.findById('6a13df05950efdd653e00f77')
+// User.findById('6a13df05950efdd653e00f77')
+//     .then((res) => {
+//         // console.log(res[0].name);
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+// Update in Mongoose
+
+// User.updateOne({name: "Peter"}, {age: 35})
+// User.updateMany({age: {$gte: 48}}, {age: 54})
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+
+// findAndUpdate in Mongoose
+
+// User.findOneAndUpdate({name: "Peter"},{age: 42})
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     })
+
+// Delete in Mongoose
+
+// User.deleteOne({name: "Adam"}).then((res) => {
+//     console.log(res);
+// });
+
+// User.deleteMany({age: {$gt: 45}}).then((res) => {
+//     console.log(res);
+// });
+
+// findbyIdDelete
+// User.findByIdAndDelete('6a13dcf23a980381a92a404c')
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+// findOneANDdelete
+
+User.findOneAndDelete({name: "Peter"})
     .then((res) => {
-        // console.log(res[0].name);
         console.log(res);
-    })
+    }) 
     .catch((err) => {
         console.log(err);
     });
