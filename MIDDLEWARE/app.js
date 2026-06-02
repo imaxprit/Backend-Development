@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const ExpressError = require("./ExpressError");
 
 // middleware --> response send
 
@@ -22,12 +23,29 @@ const app = express();
 //     next();
 // });
 
-app.use("/api", (req, res, next) => {
+const checkToken = ((req, res, next) => {
     let { token } = req.query;
     if(token === "giveaccess") {
         next();
     }
-    res.send("ACCESS DENIED!");
+    throw new ExpressError(401, "ACCESS DENIED!");
+});
+
+app.get("/api", checkToken, (req, res) => {
+    res.send("data");
+});
+
+app.get("/err", (req, res) => {
+    abcd = abcd;
+});
+
+app.get("/admin", (req, res) => {
+    throw new ExpressError(403, "Access to admin is Forbidden");
+});
+
+app.use((err, req, res, next) => {
+    let {status, message} = err;
+    res.status(status).send(message);
 });
 
 app.get("/api", (req, res) => {
